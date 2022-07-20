@@ -1,19 +1,16 @@
-﻿using System;
-
-using AR.Domain;
+﻿using AR.Domain;
 
 using Microsoft.EntityFrameworkCore;
 
 namespace AR.Pasta
 {
-    public class ContextoPrincipal : Dbcontext
-
+    public class ContextoPrincipal : DbContext
     {
-        public ContextoPrincipal(DbContextOptions options) 
-            : base()
+        public ContextoPrincipal(DbContextOptions options)
+            : base(options)
         {
         }
 
-        public DbSet<Cliente>
+        public DbSet<Cliente> Cliente { get; set; }
     }
 }
